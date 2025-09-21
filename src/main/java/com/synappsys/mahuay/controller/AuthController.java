@@ -85,7 +85,8 @@ public class AuthController {
         userDetails.getId(),
         userDetails.getUsername(),
         userDetails.getEmail(),
-        roles));
+        roles,
+        userDetails.getName()));
   }
 
   /**
@@ -114,7 +115,7 @@ public class AuthController {
     // Create a new user's account
     User user = new User(signUpRequest.getUsername(),
         signUpRequest.getEmail(),
-        encoder.encode(signUpRequest.getPassword())); // Encode the password
+        encoder.encode(signUpRequest.getPassword()), signUpRequest.getName()); // Encode the password
 
     Set<String> strRoles = signUpRequest.getRoles(); // Get the roles from the request
     Set<Role> roles = new HashSet<>(); // Initialize a set to hold the user roles

@@ -26,6 +26,7 @@ public class UserDetailsImpl implements UserDetails {
   private String id; // Unique identifier for the user
   private String username; // Username of the user
   private String email; // Email address of the user
+  private String name; // Full name of the user
 
   @JsonIgnore // Prevent serialization of the password field
   private String password; // Password of the user
@@ -41,12 +42,13 @@ public class UserDetailsImpl implements UserDetails {
    * @param password    The password of the user.
    * @param authorities The collection of user's authorities.
    */
-  public UserDetailsImpl(String id, String username, String email, String password,
+  public UserDetailsImpl(String id, String username, String email, String password, String  name,
                          Collection<? extends GrantedAuthority> authorities) {
     this.id = id; // Set user ID
     this.username = username; // Set username
     this.email = email; // Set email
     this.password = password; // Set password
+    this.name = name; // Set full name
     this.authorities = authorities; // Set authorities
   }
 
@@ -68,6 +70,7 @@ public class UserDetailsImpl implements UserDetails {
         user.getUsername(), // Username
         user.getEmail(), // Email
         user.getPassword(), // Password
+        user.getName(), // Full name
         authorities); // User authorities
   }
 
@@ -82,6 +85,10 @@ public class UserDetailsImpl implements UserDetails {
 
   public String getEmail() {
     return email; // Return email
+  }
+
+  public String getName() {
+    return name; // Return full name
   }
 
   @Override

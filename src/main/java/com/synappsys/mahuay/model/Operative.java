@@ -24,4 +24,5 @@ public class Operative {
 
   private String name;
   private String supervisorId;
+  private boolean state;
 }

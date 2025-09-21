@@ -60,6 +60,7 @@ public class OperativeController {
     Operative operative = new Operative();
     operative.setName(request.getName());
     operative.setSupervisorId(request.getSupervisorId());
+    operative.setState(true);
     return operative;
   }
 }
