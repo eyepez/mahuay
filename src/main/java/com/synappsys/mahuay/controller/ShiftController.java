@@ -9,12 +9,21 @@ import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Class: ShiftController
+ * Controller for managing shifts related to operatives.
+ *
+ * @author eyepez
+ * Creation date 15/09/2025
+ */
+@CrossOrigin(origins = "*", maxAge = 3600)
 @Slf4j
 @RestController
 @AllArgsConstructor
